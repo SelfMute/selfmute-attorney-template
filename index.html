@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Law Office of Kevin James</title>
+  <meta name="description" content="Sample law firm website design by Selfmute Apps — portfolio demonstration only; fictitious firm." />
+  <title>Hartwell &amp; Vale Legal Group — Sample Portfolio | Selfmute Apps</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,6 +41,22 @@
       color: var(--text);
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       -webkit-font-smoothing: antialiased;
+    }
+
+    .demo-banner {
+      background: linear-gradient(90deg, #0d2a4f 0%, #123a62 100%);
+      color: rgba(255, 255, 255, 0.92);
+      text-align: center;
+      font-size: 13px;
+      padding: 10px 20px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border-bottom: 1px solid rgba(184, 139, 72, 0.35);
+    }
+
+    .demo-banner span {
+      opacity: 0.88;
+      font-weight: 500;
     }
 
     img {
@@ -626,6 +643,31 @@
       letter-spacing: -0.04em;
     }
 
+    .footer-note {
+      margin-top: 8px;
+      font-size: 13px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.55);
+      max-width: 440px;
+    }
+
+    .footer-contact {
+      text-align: right;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .footer-contact a {
+      color: rgba(255, 255, 255, 0.88);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .footer-sep {
+      margin: 0 6px;
+      opacity: 0.5;
+    }
+
     @media (max-width: 1100px) {
       .stack-practice-head {
         grid-template-columns: 1fr;
@@ -723,6 +765,11 @@
       .cta-inner,
       .footer-inner {
         display: block;
+      }
+
+      .footer-contact {
+        margin-top: 20px;
+        text-align: left;
       }
 
       .cta .btn {
@@ -1319,6 +1366,11 @@
         display: block;
       }
 
+      .footer-contact {
+        margin-top: 20px;
+        text-align: left;
+      }
+
       .cta .btn {
         margin-top: 28px;
       }
@@ -1859,11 +1911,15 @@
 </head>
 
 <body>
+  <div class="demo-banner" role="note">
+    Selfmute Apps — sample law firm design <span>(fictitious firm; not a real practice)</span>
+  </div>
+
   <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="#">
-        <small>Law Office of</small>
-        <strong>Kevin James</strong>
+      <a class="logo" href="#home">
+        <small>Hartwell &amp; Vale</small>
+        <strong>Legal Group</strong>
       </a>
 
       <nav class="nav">
@@ -1886,7 +1942,7 @@
     <section class="hero">
       <div class="hero-content">
         <div class="hero-copy">
-          <div class="eyebrow">Law Office of Kevin James</div>
+          <div class="eyebrow">Hartwell &amp; Vale Legal Group</div>
           <h1>Clear legal direction when the next step matters.</h1>
           <p class="hero-text">
             Legal problems can move quickly. The office helps clients understand their options,
@@ -2028,7 +2084,7 @@
           <div class="eyebrow">About The Office</div>
           <h2>A legal office built around clarity, preparation, and direct answers.</h2>
           <p>
-            The Law Office of Kevin James works with clients who need to understand their position
+            The text below is part of this design sample. It describes how a firm can work with clients who need to understand their position
             before making important decisions. Every matter begins with the facts, the pressure points,
             the timeline, and the outcome the client is trying to protect.
           </p>
@@ -2068,15 +2124,24 @@
             and decide what should happen next with confidence.
           </p>
         </div>
-        <a class="btn" href="mailto:info@kevinjameslaw.com">Contact the Office</a>
+        <a class="btn" href="mailto:selfmute.apps@gmail.com?subject=Inquiry%20from%20sample%20portfolio%20site">Email Selfmute Apps</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container footer-inner">
-      <strong>Law Office of Kevin James</strong>
-      <span>© 2026 Law Office of Kevin James. All rights reserved.</span>
+      <div>
+        <strong>Hartwell &amp; Vale Legal Group</strong>
+        <div class="footer-note">
+          © 2026 Selfmute Apps. Sample design portfolio — fictitious firm name only; not affiliated with any existing law practice.
+        </div>
+      </div>
+      <div class="footer-contact">
+        <a href="mailto:selfmute.apps@gmail.com">selfmute.apps@gmail.com</a>
+        <span class="footer-sep">·</span>
+        <a href="tel:+905415926118">+90&nbsp;541&nbsp;592&nbsp;61&nbsp;18</a>
+      </div>
     </div>
   </footer>
 
