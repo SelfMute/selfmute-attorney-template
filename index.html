@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Sample law firm website design by Selfmute Apps — portfolio demonstration only; fictitious firm." />
+  <meta name="description" content="Law firm web concept: clear trust, intake, and practice structure—prepared for review by Selfmute Apps." />
   <title>Hartwell &amp; Vale Legal Group — Sample Portfolio | Selfmute Apps</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,22 +41,6 @@
       color: var(--text);
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       -webkit-font-smoothing: antialiased;
-    }
-
-    .demo-banner {
-      background: linear-gradient(90deg, #0d2a4f 0%, #123a62 100%);
-      color: rgba(255, 255, 255, 0.92);
-      text-align: center;
-      font-size: 13px;
-      padding: 10px 20px;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      border-bottom: 1px solid rgba(184, 139, 72, 0.35);
-    }
-
-    .demo-banner span {
-      opacity: 0.88;
-      font-weight: 500;
     }
 
     img {
@@ -632,7 +616,7 @@
       display: flex;
       justify-content: space-between;
       gap: 32px;
-      align-items: center;
+      align-items: flex-start;
       font-size: 14px;
     }
 
@@ -643,12 +627,21 @@
       letter-spacing: -0.04em;
     }
 
+    .footer-prepared {
+      margin-top: 12px;
+      font-size: 13px;
+      line-height: 1.45;
+      color: rgba(255, 255, 255, 0.78);
+      font-weight: 600;
+      max-width: 460px;
+    }
+
     .footer-note {
       margin-top: 8px;
-      font-size: 13px;
-      line-height: 1.5;
-      color: rgba(255, 255, 255, 0.55);
-      max-width: 440px;
+      font-size: 12px;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.48);
+      max-width: 460px;
     }
 
     .footer-contact {
@@ -1907,14 +1900,211 @@
         font-size: 22px;
       }
     }
+
+    /* =========================================================
+       MOBILE HERO REDESIGN — compact overlap card (desktop grid >1020px unchanged)
+       DOM has .hero-content before .hero-media; flex order places image band on top.
+       ========================================================= */
+    @media (max-width: 1020px) {
+      .hero {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        min-height: 0;
+        max-height: none;
+        background: #f6f7f9;
+        border-bottom: 1px solid rgba(6, 28, 56, 0.08);
+        overflow: visible;
+        padding-bottom: 28px;
+      }
+
+      .hero-media {
+        order: 1;
+        display: block !important;
+        position: relative;
+        height: 270px;
+        min-height: 270px;
+        overflow: hidden;
+        border-bottom-left-radius: 26px;
+        border-bottom-right-radius: 26px;
+      }
+
+      .hero-media::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        pointer-events: none;
+        background:
+          linear-gradient(180deg, rgba(6, 22, 40, 0.18) 0%, rgba(6, 22, 40, 0.10) 30%, rgba(6, 22, 40, 0.45) 100%);
+      }
+
+      .hero-media img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+        object-fit: cover;
+        object-position: center 42%;
+        filter: saturate(0.88) contrast(1.02);
+      }
+
+      .hero-content {
+        order: 2;
+        position: relative;
+        z-index: 3;
+        display: block;
+        min-height: 0;
+        padding: 0 16px;
+        margin-top: -42px;
+      }
+
+      .hero-copy {
+        width: 100%;
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 24px 22px 22px;
+        background: rgba(255, 255, 255, 0.97);
+        border: 1px solid rgba(6, 28, 56, 0.08);
+        border-radius: 22px;
+        box-shadow: 0 18px 44px rgba(6, 28, 56, 0.12);
+        transform: none;
+      }
+
+      .hero .eyebrow {
+        margin-bottom: 12px;
+        font-size: 11px;
+        letter-spacing: 0.16em;
+      }
+
+      .hero .eyebrow::before {
+        width: 34px;
+      }
+
+      .hero .hero-copy h1 {
+        max-width: 10ch;
+        font-size: clamp(34px, 6vw, 46px);
+        line-height: 1.04;
+        letter-spacing: -0.055em;
+      }
+
+      .hero .hero-text {
+        margin: 14px 0 18px;
+        max-width: 100%;
+        font-size: 16px;
+        line-height: 1.55;
+        color: #4c5869;
+      }
+
+      .hero-text-more {
+        display: none;
+      }
+
+      .hero .hero-actions {
+        display: grid;
+        gap: 10px;
+        margin-top: 2px;
+      }
+
+      .hero .hero-actions .btn {
+        width: 100%;
+        height: 54px;
+        min-height: 54px;
+        padding: 0 18px;
+        font-size: 15px;
+        border-radius: 14px;
+      }
+
+      .hero .hero-actions .btn-primary {
+        box-shadow: none;
+      }
+
+      .hero .hero-actions .btn-secondary {
+        background: #ffffff;
+        border: 1px solid rgba(6, 28, 56, 0.14);
+        color: var(--navy);
+      }
+
+      .hero .hero-assurance {
+        margin-top: 18px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(6, 28, 56, 0.08);
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .hero .hero-assurance span {
+        font-size: 13px;
+        font-weight: 700;
+        color: #536072;
+      }
+
+      .hero .hero-assurance span::before {
+        width: 6px;
+        height: 6px;
+      }
+
+      .media-card {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .hero-media {
+        height: 235px;
+        min-height: 235px;
+        border-bottom-left-radius: 22px;
+        border-bottom-right-radius: 22px;
+      }
+
+      .hero-content {
+        padding: 0 14px;
+        margin-top: -34px;
+      }
+
+      .hero-copy {
+        padding: 20px 18px 18px;
+        border-radius: 20px;
+      }
+
+      .hero .hero-copy h1 {
+        font-size: clamp(30px, 8vw, 38px);
+        line-height: 1.06;
+        max-width: 9.8ch;
+      }
+
+      .hero .hero-text {
+        margin: 12px 0 16px;
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      .hero .hero-actions .btn {
+        height: 52px;
+        min-height: 52px;
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero-media {
+        height: 210px;
+        min-height: 210px;
+      }
+
+      .hero .hero-copy h1 {
+        font-size: 28px;
+      }
+
+      .hero .hero-assurance span {
+        font-size: 12.5px;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <div class="demo-banner" role="note">
-    Selfmute Apps — sample law firm design <span>(fictitious firm; not a real practice)</span>
-  </div>
-
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="#home">
@@ -1943,19 +2133,18 @@
       <div class="hero-content">
         <div class="hero-copy">
           <div class="eyebrow">Hartwell &amp; Vale Legal Group</div>
-          <h1>Clear legal direction when the next step matters.</h1>
+          <h1>Clear answers before difficult decisions.</h1>
           <p class="hero-text">
-            Legal problems can move quickly. The office helps clients understand their options,
-            prepare the right response, and move forward with steady representation.
+            <span class="hero-text-lead">Practical legal guidance when timing matters.</span><span class="hero-text-more"> A website that makes your office easier to trust, contact, and understand—so serious inquiries do not bounce to the next firm, and referrers feel confident sending people your way.</span>
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#contact">Schedule a Consultation</a>
             <a class="btn btn-secondary" href="#practice">Explore Practice Areas</a>
           </div>
           <div class="hero-assurance">
-            <span>Confidential consultation</span>
-            <span>Clear next steps</span>
-            <span>Direct attorney communication</span>
+            <span>Credible at first glance</span>
+            <span>Clear path to contact</span>
+            <span>Built for mobile search</span>
           </div>
         </div>
       </div>
@@ -1972,11 +2161,11 @@
         <div class="dossier-head">
           <div>
             <div class="eyebrow">Practice Areas</div>
-            <h2>Legal support shaped around the situation, not a generic template.</h2>
+            <h2>Help visitors self-qualify—so your time goes to the right matters.</h2>
           </div>
           <p>
-            Clients come in with pressure, uncertainty, and decisions that cannot wait.
-            The office helps turn complicated legal problems into a clear plan of action.
+            Naming your areas in plain language, with obvious next steps, cuts down on mismatched calls and makes
+            complex practices easier to scan on a phone—where most firm comparisons start.
           </p>
         </div>
         <div class="dossier-shell">
@@ -2002,11 +2191,10 @@
             <article class="dossier-case" id="family">
               <div class="dossier-copy">
                 <span class="case-label">01 / Family Law</span>
-                <h3>Guidance for decisions that affect home, custody, and stability.</h3>
+                <h3>When custody, support, and parenting plans need a steady hand.</h3>
                 <p>
-                  Family matters are personal, time-sensitive, and often emotionally difficult.
-                  The office helps clients understand what is at stake, what options are available,
-                  and how to move through the process with discretion.
+                  Visitors decide fast whether you handle their situation. This structure highlights your scope, timelines,
+                  and what a first step looks like—without burying the intake path.
                 </p>
                 <div class="case-points">
                   <span>Divorce</span>
@@ -2022,11 +2210,10 @@
             <article class="dossier-case dossier-case-dark" id="injury">
               <div class="dossier-copy">
                 <span class="case-label">02 / Personal Injury</span>
-                <h3>Practical direction after an accident changes the next few months.</h3>
+                <h3>Injury claims where speed, proof, and follow-up separate you from ads.</h3>
                 <p>
-                  Injury cases need organized documentation, timely decisions, and a clear view
-                  of possible recovery. The office helps clients preserve facts and approach the
-                  claim with preparation.
+                  Claimants compare firms in minutes. A layout that surfaces process, experience, and a clear call path
+                  turns page views into signed matters—especially on mobile.
                 </p>
                 <div class="case-points">
                   <span>Accidents</span>
@@ -2039,11 +2226,10 @@
             <article class="dossier-case" id="defense">
               <div class="dossier-copy">
                 <span class="case-label">03 / Criminal Defense</span>
-                <h3>Prepared defense when reputation, freedom, and future are at risk.</h3>
+                <h3>Defense work where urgency and discretion drive the first contact.</h3>
                 <p>
-                  Criminal allegations require immediate attention and careful judgment.
-                  The office reviews the facts, explains the process, and develops a defense
-                  strategy based on the specific circumstances of the case.
+                  People search under stress. The site needs to communicate availability, jurisdiction, and the next step
+                  immediately—so qualified calls reach you, not a voicemail black hole.
                 </p>
                 <div class="case-points">
                   <span>Charges</span>
@@ -2059,11 +2245,10 @@
             <article class="dossier-case dossier-case-outline" id="civil">
               <div class="dossier-copy">
                 <span class="case-label">04 / Civil Litigation</span>
-                <h3>Measured advocacy for disputes that need structure and pressure.</h3>
+                <h3>Business disputes where clarity on scope and risk wins the mandate.</h3>
                 <p>
-                  Civil disputes need more than reaction. The office helps organize facts,
-                  evaluate risks, and pursue a practical litigation strategy with the larger
-                  objective in focus.
+                  In-house counsel and business owners want straight answers. Content organized by dispute type and outcome
+                  makes it easier for the right client to choose you—and for referrers to explain what you do.
                 </p>
                 <div class="case-points">
                   <span>Disputes</span>
@@ -2081,28 +2266,28 @@
     <section class="office-brief" id="about">
       <div class="container office-brief-grid">
         <div class="office-brief-copy">
-          <div class="eyebrow">About The Office</div>
-          <h2>A legal office built around clarity, preparation, and direct answers.</h2>
+          <div class="eyebrow">What this concept is meant to prove</div>
+          <h2>Credibility visitors can verify in seconds.</h2>
           <p>
-            The text below is part of this design sample. It describes how a firm can work with clients who need to understand their position
-            before making important decisions. Every matter begins with the facts, the pressure points,
-            the timeline, and the outcome the client is trying to protect.
+            Strong creative is not decoration—it is a conversion path. When someone compares firms after hours on a phone,
+            they are really judging whether you look competent, current, and easy to reach. This concept front-loads who you help,
+            what you handle, and how to contact you—so lookups turn into consults instead of exits.
           </p>
           <div class="brief-list">
             <div>
               <span>01</span>
-              <strong>Understand the situation</strong>
-              <p>Clarify what happened, what is urgent, and what needs to be protected first.</p>
+              <strong>Trust before the first call</strong>
+              <p>Polished structure and legible hierarchy signal seriousness before a visitor reads a full paragraph—critical when you are one tab among five.</p>
             </div>
             <div>
               <span>02</span>
-              <strong>Prepare the response</strong>
-              <p>Organize documents, deadlines, arguments, and communication before action is taken.</p>
+              <strong>Intake that does not hide</strong>
+              <p>Phone, email, and consultation routes stay visible as they scroll—because hesitation equals a lost matter.</p>
             </div>
             <div>
               <span>03</span>
-              <strong>Move with direction</strong>
-              <p>Give the client a practical path forward instead of vague legal language.</p>
+              <strong>Clear fit for referrers</strong>
+              <p>When colleagues and past clients forward your link, practice scoping they can understand helps them send the right case—and protects your time.</p>
             </div>
           </div>
         </div>
@@ -2118,10 +2303,10 @@
     <section class="cta" id="contact">
       <div class="container cta-inner">
         <div>
-          <h2>Start with a clear conversation.</h2>
+          <h2>See this tailored to your firm and your Bar rules.</h2>
           <p>
-            Contact the office to discuss your matter, understand your options,
-            and decide what should happen next with confidence.
+            This preview shows positioning and flow. In a real engagement we align copy, disclosures, and intake with your jurisdiction,
+            ethics requirements, and the case types you actually want in the door.
           </p>
         </div>
         <a class="btn" href="mailto:selfmute.apps@gmail.com?subject=Inquiry%20from%20sample%20portfolio%20site">Email Selfmute Apps</a>
@@ -2133,8 +2318,9 @@
     <div class="container footer-inner">
       <div>
         <strong>Hartwell &amp; Vale Legal Group</strong>
+        <div class="footer-prepared">Prepared for review by Selfmute Apps</div>
         <div class="footer-note">
-          © 2026 Selfmute Apps. Sample design portfolio — fictitious firm name only; not affiliated with any existing law practice.
+          Concept redesign prepared by Selfmute Apps. This is a private design preview and not an active law firm website.
         </div>
       </div>
       <div class="footer-contact">
